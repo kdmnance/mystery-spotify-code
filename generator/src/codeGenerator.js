@@ -46,9 +46,19 @@ const BARS = [
   }
 ];
 
+const INITIAL_CODE = [BARS[0],BARS[0],BARS[0],BARS[0],BARS[0],BARS[0],BARS[0],BARS[0],BARS[0],BARS[0],BARS[0],BARS[0],BARS[0],BARS[0],BARS[0],BARS[0],BARS[0],BARS[0],BARS[0],BARS[0],BARS[0],BARS[0]]
+const INITIAL_TEXT_CODE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
 class CodeGenerator extends React.Component{
   constructor(props) {
     super(props);
+
+    this.state = {
+      code: INITIAL_CODE,
+      textCode: INITIAL_TEXT_CODE
+    };
+
+    this.generateCode = this.generateCode.bind(this)
   }
 
   generateCode(){
@@ -68,12 +78,26 @@ class CodeGenerator extends React.Component{
       code.push(bar)
     }
 
+    let textCode = []
+    for (bar of code){
+      textCode.push(bar.size)
+    }
+
+    this.setState({code: code, textCode: textCode})
+
     console.log(code)
+  }
+
+  resetCode(){
+    this.setState({code: INITIAL_CODE, textCode: INITIAL_TEXT_CODE})
   }
 
   render() {
     return (
-      <Button variant="outline-primary" onClick={this.generateCode}>hello</Button>
+      <div className="code-generator">
+        <Button variant="primary" onClick={this.generateCode}>Generate a Code</Button>
+        <p className="text-code">Your code is: [{this.state.textCode.join(", ")}]</p>
+      </div>
     )
   }
 }
