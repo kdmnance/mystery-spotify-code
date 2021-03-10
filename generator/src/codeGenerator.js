@@ -59,6 +59,7 @@ class CodeGenerator extends React.Component{
     };
 
     this.generateCode = this.generateCode.bind(this)
+    this.resetCode = this.resetCode.bind(this)
   }
 
   generateCode(){
@@ -95,7 +96,8 @@ class CodeGenerator extends React.Component{
   render() {
     return (
       <div className="code-generator">
-        <Button variant="primary" onClick={this.generateCode}>Generate a Code</Button>
+        <Button variant="primary" className="mr-2" onClick={this.generateCode}>Generate a Code</Button>
+        <Button variant="outline-secondary" onClick={this.resetCode}>Reset Code</Button>
         <p className="text-code">Your code is: [{this.state.textCode.join(", ")}]</p>
       </div>
     )
