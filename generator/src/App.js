@@ -19,9 +19,9 @@ function App() {
       <Container fluid className="main-jumbotron text-center">
         <Jumbotron>
           <h1>Get a code now!</h1>
-          <p>Push the button to get a random Spotify code (that may or may not scan)</p>
+          <p>Push the button to get a randomly generated Spotify code (that may or may not scan)</p>
         </Jumbotron>
-        <p><CodeGenerator/></p>
+        <CodeGenerator/>
       </Container>
     </div>
   );

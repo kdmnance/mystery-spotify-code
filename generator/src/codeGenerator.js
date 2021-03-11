@@ -127,7 +127,7 @@ class CodeGenerator extends React.Component{
     for (let i=0; i<CODE_LENGTH; i++){
       let bar = code[i];
       let codeBar = draw.rect(WIDTH, bar.height).radius(RADIUS).move(xOffset, bar.yOffset).fill('#fff');
-      xOffset += 12.42;
+      xOffset += X_OFFSET_INCREMENT;
     }
   }
 
