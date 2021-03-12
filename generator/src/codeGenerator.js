@@ -121,7 +121,7 @@ class CodeGenerator extends React.Component{
     let draw = SVG().addTo('#code-image-container').size(400, 100);
 
     let codeBg = draw.rect(400, 100).fill('#000');
-    let spotifyLogo = draw.path(SPOTIFY_LOGO).move(20, 20).fill("#fff")
+    let spotifyLogo = draw.path(SPOTIFY_LOGO).move(20, 20).fill("#fff");
 
     let xOffset = 100;
     for (let i=0; i<CODE_LENGTH; i++){
@@ -136,6 +136,8 @@ class CodeGenerator extends React.Component{
       code: INITIAL_CODE,
       textCode: INITIAL_TEXT_CODE
     });
+
+    document.getElementById("code-image-container").innerHTML = "";
   }
 
   render() {
